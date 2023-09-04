@@ -1,15 +1,22 @@
-function Comic() {
+import { useState } from "react"
+
+function Comic({id, image_url, issue, title}) {
+  const [imageDisplayed, setImageDisplayed] = useState(true) 
+
+  function handleClick() {
+
+  }
 
   return (
     <div className="comic-item">
-
-      {/* The image should render if the details aren't displayed */}
-      <img src={"#"} alt={"Comic Issue Image"} />
-
-      {/* The details should render if the image isn't displayed */}
-      <h3>{"Title"}</h3>
-      <h4>{"Issue No."}</h4>
+      {imageDisplayed 
+      ? <img src={image_url} alt={"Comic Issue Image"} onClick={() => setImageDisplayed(!imageDisplayed)} />
+      : <div> 
+      <h3 onClick={() => setImageDisplayed(!imageDisplayed)}>{title}</h3>
+      <h4>{issue}</h4>
       <button>Remove</button>
+      </div>
+      }
 
     </div>
   )
