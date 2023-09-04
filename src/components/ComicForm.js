@@ -1,5 +1,8 @@
+import { useState } from "react"
+
 function ComicForm({addComic}) {
-  
+  const [showForm, setShowForm] = useState(false)
+
   function handleSubmit(e) {
     e.preventDefault()
     const newComic = {
@@ -12,6 +15,9 @@ function ComicForm({addComic}) {
   }
   
   return (
+    <>
+    {showForm
+    ? <>
     <form className="comic-form" onSubmit={(e) => handleSubmit(e)}>
       <h2>Add A New Issue</h2>
 
@@ -29,7 +35,11 @@ function ComicForm({addComic}) {
 
       <input type="submit" value="Add Issue" />
     </form>
-
+    <button onClick={() => setShowForm(!showForm)}>Hide Form</button>
+    </>
+    : <button onClick={() => setShowForm(!showForm)}>Add New Issue</button>
+    }
+    </>
   )
 }
 
