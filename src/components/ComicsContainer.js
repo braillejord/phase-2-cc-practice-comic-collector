@@ -1,6 +1,6 @@
 import Comic from "./Comic"
 
-function ComicsContainer({comics, deleteComic}) {
+function ComicsContainer({comics, deleteComic, favoriteComic, unfavoriteComic}) {
 
   return (
     <>
@@ -9,6 +9,8 @@ function ComicsContainer({comics, deleteComic}) {
       key={comic.id}
       {...comic}
       deleteComic={deleteComic}
+      favoriteComic={favoriteComic}
+      unfavoriteComic={unfavoriteComic}
       />
       ))}
     </>

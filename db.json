@@ -4,31 +4,36 @@
       "id": 1,
       "title": "The Incredible Hulk",
       "issue": "1",
-      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg"
+      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg",
+      "favorited": false
     },
     {
       "id": 2,
       "title": "The Amazing Spiderman",
       "issue": "1",
-      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/5196582d03800/clean.jpg"
+      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/5196582d03800/clean.jpg",
+      "favorited": false
     },
     {
       "id": 3,
       "title": "The Amazing Spiderman",
       "issue": "300",
-      "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1Hqli+hGCL.jpg"
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1Hqli+hGCL.jpg",
+      "favorited": true
     },
     {
       "id": 4,
       "title": "Action Comics",
       "issue": "1",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/5/5a/Action_Comics_1.jpg"
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/5/5a/Action_Comics_1.jpg",
+      "favorited": false
     },
     {
       "id": 5,
       "title": "Detective Comics",
       "issue": "38",
-      "image_url": "https://d1466nnw0ex81e.cloudfront.net/n_iv/600/5401401.jpg"
+      "image_url": "https://d1466nnw0ex81e.cloudfront.net/n_iv/600/5401401.jpg",
+      "favorited": false
     }
   ]
 }

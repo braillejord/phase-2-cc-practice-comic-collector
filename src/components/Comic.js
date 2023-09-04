@@ -1,9 +1,8 @@
 import { useState } from "react"
 
-function Comic({id, image_url, issue, title, deleteComic}) {
+function Comic({id, image_url, issue, title, favorited, deleteComic, favoriteComic, unfavoriteComic}) {
   const [imageDisplayed, setImageDisplayed] = useState(true)
-  const [favorited, setFavorited] = useState(false)
-
+  
   return (
     <div className="comic-item">
       {imageDisplayed 
@@ -12,8 +11,8 @@ function Comic({id, image_url, issue, title, deleteComic}) {
       <h3 onClick={() => setImageDisplayed(!imageDisplayed)}>{title}</h3>
       <h4>{issue}</h4>
       {favorited
-      ? <button onClick={() => setFavorited(!favorited)}>Unfavorite</button>
-      : <button onClick={() => setFavorited(!favorited)}>Favorite</button>
+      ? <button id="unfavoriteButton" onClick={() => unfavoriteComic(id)}>Unfavorite</button>
+      : <button id="favoriteButton" onClick={() => favoriteComic(id)}>Favorite</button>
       }
       <button onClick={() => deleteComic(id)}>Remove</button>
       </div>

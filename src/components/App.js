@@ -37,6 +37,44 @@ function App() {
     })))
   }
 
+  function favoriteComic(id) {
+    fetch(comicUrl + "/" + id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }, body: JSON.stringify({
+          favorited: true,
+      }),
+    })
+      .then(r => r.json())
+      .then((updatedComic) => {
+        const updatedComics = comics.map((comic) => (
+          comic.id === updatedComic.id ? updatedComic : comic
+        ));
+        setComics(updatedComics)
+      })
+    }
+
+    function unfavoriteComic(id) {
+      fetch(comicUrl + "/" + id, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }, body: JSON.stringify({
+            favorited: false,
+        }),
+      })
+      .then(r => r.json())
+      .then((updatedComic) => {
+        const updatedComics = comics.map((comic) => (
+          comic.id === updatedComic.id ? updatedComic : comic
+        ));
+        setComics(updatedComics)
+      })
+    }
+
   return (
     <div className="App">
       <h1>Comicbook Collector</h1>
@@ -45,6 +83,8 @@ function App() {
           <ComicsContainer 
           comics={comics}
           deleteComic={deleteComic}
+          favoriteComic={favoriteComic}
+          unfavoriteComic={unfavoriteComic}
           />
         </div>
         <div className="sidebar">

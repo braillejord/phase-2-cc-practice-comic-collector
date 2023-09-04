@@ -81,3 +81,11 @@ input {
 h3 {
   cursor: pointer;
 }
+
+#favoriteButton {
+  background-color: green;
+}
+
+#unfavoriteButton {
+  background-color: yellow;
+}
