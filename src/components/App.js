@@ -14,6 +14,18 @@ function App() {
     .then(data => setComics(data))
   }, []) 
 
+  function addComic(newComic) {
+    fetch(comicUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }, body: JSON.stringify(newComic)
+    })
+    .then(r => r.json())
+    .then(newComic => setComics([...comics, newComic]))
+  }
+
   return (
     <div className="App">
       <h1>Comicbook Collector</h1>
@@ -23,7 +35,8 @@ function App() {
           comics={comics}/>
         </div>
         <div className="sidebar">
-          <ComicForm />
+          <ComicForm 
+          addComic={addComic}/>
         </div>
       </div>
     </div>

@@ -1,7 +1,20 @@
-function ComicForm() {
+function ComicForm({addComic}) {
+  
+  function handleSubmit(e) {
+    e.preventDefault()
+    const newComic = {
+      title: e.target.title.value,
+      issue: e.target.issue.value,
+      image_url: e.target.image_url.value
+    }
+    addComic(newComic)
+    e.target.reset()
+  }
+  
+  
   return (
 
-    <form className="comic-form">
+    <form className="comic-form" onSubmit={(e) => handleSubmit(e)}>
 
       <h2>Add A New Issue</h2>
 
@@ -14,8 +27,8 @@ function ComicForm() {
       <label htmlFor="issue">Issue Number: </label>
       <input name="issue" type="number" />
 
-      <label htmlFor="description">Description: </label>
-      <input name="description" />
+      {/* <label htmlFor="description">Description: </label>
+      <input name="description" /> */}
 
       <input type="submit" value="Add Issue" />
 

@@ -71,6 +71,7 @@ button, input[type=submit] {
   border-radius: 0.5em;
   background: none;
   font-family: 'Permanent Marker', cursive;
+  cursor: pointer;
 }
 
 input {
