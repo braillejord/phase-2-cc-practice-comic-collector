@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Comic({id, image_url, issue, title}) {
+function Comic({id, image_url, issue, title, deleteComic}) {
   const [imageDisplayed, setImageDisplayed] = useState(true) 
 
   function handleClick() {
@@ -14,7 +14,7 @@ function Comic({id, image_url, issue, title}) {
       : <div> 
       <h3 onClick={() => setImageDisplayed(!imageDisplayed)}>{title}</h3>
       <h4>{issue}</h4>
-      <button>Remove</button>
+      <button onClick={() => deleteComic(id)}>Remove</button>
       </div>
       }
 

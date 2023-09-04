@@ -11,11 +11,8 @@ function ComicForm({addComic}) {
     e.target.reset()
   }
   
-  
   return (
-
     <form className="comic-form" onSubmit={(e) => handleSubmit(e)}>
-
       <h2>Add A New Issue</h2>
 
       <label htmlFor="image_url">Image URL: </label>
@@ -31,7 +28,6 @@ function ComicForm({addComic}) {
       <input name="description" /> */}
 
       <input type="submit" value="Add Issue" />
-
     </form>
 
   )

@@ -26,13 +26,26 @@ function App() {
     .then(newComic => setComics([...comics, newComic]))
   }
 
+  function deleteComic(id) {
+    fetch(comicUrl + "/" + id, {
+      method: "DELETE",
+    })
+    .then(setComics(comics.filter((comic) => {
+      if (comic.id != id) {
+        return true
+      }
+    })))
+  }
+
   return (
     <div className="App">
       <h1>Comicbook Collector</h1>
       <div className="grid with-sidebar">
         <div className="flex-container">
           <ComicsContainer 
-          comics={comics}/>
+          comics={comics}
+          deleteComic={deleteComic}
+          />
         </div>
         <div className="sidebar">
           <ComicForm 
