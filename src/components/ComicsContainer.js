@@ -8,7 +8,8 @@ function ComicsContainer({comics, deleteComic}) {
       <Comic 
       key={comic.id}
       {...comic}
-      deleteComic={deleteComic}/>
+      deleteComic={deleteComic}
+      />
       ))}
     </>
   )
